@@ -36,6 +36,7 @@ const App = () => {
 
   useEffect(
     () => {
+      console.log(`debouncedSearchTerm`, debouncedSearchTerm);
       if (debouncedSearchTerm) {
         const handleSearch = async () => {
           const features = await getSuggestions(
@@ -48,15 +49,14 @@ const App = () => {
         handleSearch();
       } else {
         setSuggestions([]);
-        setShowSuggestions(false);
       }
     },
     [debouncedSearchTerm] // Only call effect if debounced search term changes
   );
 
   const handleInputChange = async (e) => {
-    setLocation(e.target.innerText);
     setShowSuggestions(false);
+    setLocation(e.target.innerText);
     const loc = suggestions.find((suggestion) => suggestion.id === e.target.id);
     const weather = await getWeather(
       loc.geometry.coordinates[1],
@@ -77,7 +77,6 @@ const App = () => {
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
-            // onBlur={() => setShowSuggestions(false)}
           />
           {suggestions.length > 0 && (
             <div
