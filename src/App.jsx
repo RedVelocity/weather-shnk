@@ -36,7 +36,6 @@ const App = () => {
 
   useEffect(
     () => {
-      console.log(`debouncedSearchTerm`, debouncedSearchTerm);
       if (debouncedSearchTerm) {
         const handleSearch = async () => {
           const features = await getSuggestions(
@@ -104,7 +103,7 @@ const App = () => {
       <div
         className={`max-w-md rounded shadow p-4 text-lg font-medium transition-colors duration-1000 ease-in-out ${theme}`}
       >
-        <div className="flex justify-evenly items-center border-b-2 border-black pb-4">
+        <div className="flex justify-between items-center gap-6 text-center border-b-2 border-black pb-4">
           <img
             alt="icon"
             src="https://img.icons8.com/material-outlined/50/000000/summer.png"
