@@ -1,9 +1,9 @@
 body {
-  @apply bg-gray-300 p-4;
+  @apply bg-gray-200 p-4;
 }
 
 .hot {
-  @apply bg-red-400;
+  @apply bg-red-500;
 }
 
 .cold {
@@ -12,4 +12,16 @@ body {
 
 .mild {
   @apply bg-yellow-400;
+}
+
+.hover-hot {
+  @apply hover:bg-red-500;
+}
+
+.hover-cold {
+  @apply hover:bg-blue-200 hover:text-indigo-900;
+}
+
+.hover-mild {
+  @apply hover:bg-yellow-400;
 }
