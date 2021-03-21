@@ -1,3 +1,15 @@
 body {
   @apply bg-gray-300 p-4;
 }
+
+.hot {
+  @apply bg-red-400;
+}
+
+.cold {
+  @apply bg-blue-200 text-indigo-900;
+}
+
+.mild {
+  @apply bg-yellow-400;
+}

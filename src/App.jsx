@@ -7,33 +7,30 @@ const App = () => {
   const [weatherData, setweatherData] = useState({
     currently: { apparentTemperature: 0, summary: '--' },
   });
+  let theme;
+  if (weatherData.currently.apparentTemperature <= 10) theme = 'cold';
+  else if (weatherData.currently.apparentTemperature <= 28) theme = 'mild';
+  else theme = 'hot';
   const setWeatherState = async (latitude, longitude) => {
     const loc = await getLocation(latitude, longitude);
     const weather = await getWeather(latitude, longitude);
     setlocation(loc);
     setweatherData(weather);
   };
+
   useEffect(() => {
     if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(async (position) => {
+      navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
         setWeatherState(latitude, longitude);
       });
-    } else {
-      setWeatherState(47.6062, 122.3321);
     }
   }, []);
 
-  const cold = weatherData.currently.apparentTemperature <= 10;
-  let theme;
-  if (cold) {
-    theme = 'bg-gradient-to-r from-indigo-300 to-pink-300 text-indigo-900';
-  } else {
-    theme = 'bg-gradient-to-r from-yellow-400 to-red-500';
-  }
-
   return (
-    <div className={`max-w-md rounded ${theme} p-4 text-lg font-medium m-auto`}>
+    <div
+      className={`max-w-md rounded p-4 text-lg font-medium m-auto transition-colors duration-1000 ease-in-out ${theme}`}
+    >
       <div className="flex justify-evenly items-center border-b-2 border-black pb-4">
         <img
           alt="icon"
@@ -47,7 +44,7 @@ const App = () => {
           </h1>
         </div>
       </div>
-      <div className="flex pt-4 items-center">
+      <div className="flex items-center pt-4">
         <img
           alt="location"
           src="https://img.icons8.com/material-outlined/24/000000/marker.png"
