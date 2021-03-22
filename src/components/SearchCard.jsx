@@ -66,7 +66,7 @@ const SearchCard = () => {
         />
         {suggestions.length > 0 && (
           <div
-            className={`absolute transition duration-300 bg-white w-full rounded shadow p-4 mt-2 z-10 ${
+            className={`absolute transition duration-300 bg-white w-full rounded shadow p-2 mt-2 z-10 ${
               !showSuggestions && 'opacity-0 invisible'
             }`}
           >

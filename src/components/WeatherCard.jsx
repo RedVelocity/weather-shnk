@@ -45,7 +45,7 @@ const WeatherCard = () => {
           </h1>
         </div>
       </div>
-      <div className="flex items-center pt-4">
+      <div className="flex items-center pt-4 space-x-1">
         <img
           alt="location"
           src="https://img.icons8.com/material-outlined/24/000000/marker.png"
