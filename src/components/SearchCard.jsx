@@ -53,13 +53,13 @@ const SearchCard = () => {
   };
 
   return (
-    <div className="max-w-md p-4 bg-gray-700 rounded shadow">
+    <div className="max-w-md p-4 bg-gray-600 rounded shadow">
       <h1 className="text-xl font-medium text-gray-100">Search</h1>
       <div className="relative mt-4">
         <input
-          className="w-full p-1 bg-gray-100 rounded focus:outline-none focus:ring focus:ring-blue-400"
+          className="w-full px-2 py-1 bg-gray-100 rounded focus:outline-none focus:ring focus:ring-blue-400"
           type="text"
-          //   placeholder="Enter Place Name"
+          placeholder="Place Name"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           onFocus={() => setShowSuggestions(true)}

@@ -37,10 +37,10 @@ const WeatherCard = () => {
           alt="icon"
           src={weatherIcons[weatherData.currently.icon.replaceAll('-', '_')]}
         />
-        <h1 className="text-xl">{weatherData.currently.summary}</h1>
+        <h1 className="text-2xl md:text-xl">{weatherData.currently.summary}</h1>
         <div className="flex flex-col items-center justify-center">
           <h1 className="">Currently</h1>
-          <h1 className="text-3xl">
+          <h1 className="text-4xl">
             {Math.round(weatherData.currently.apparentTemperature)}°C
           </h1>
         </div>
