@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getLocation, getSuggestions, getWeather } from './API';
 import './App.css';
+import weatherIcons from './assets/svg/weatherIcons';
 import useDebounce from './hooks/useDebounce';
 
 const App = () => {
   const [location, setLocation] = useState('-- Grant Location Access');
   const [weatherData, setWeatherData] = useState({
-    currently: { apparentTemperature: 0, summary: '--' },
+    currently: { apparentTemperature: 0, summary: '--', icon: 'clear-day' },
   });
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [searchInput, setSearchInput] = useState('');
@@ -105,10 +106,11 @@ const App = () => {
       >
         <div className="flex justify-between items-center gap-6 text-center border-b-2 border-black pb-4">
           <img
+            className="h-20 w-20"
             alt="icon"
-            src="https://img.icons8.com/material-outlined/50/000000/summer.png"
+            src={weatherIcons[weatherData.currently.icon.replaceAll('-', '_')]}
           />
-          <h1 className="text-xl">{weatherData.currently.summary}</h1>
+          <h1 className="text-2xl">{weatherData.currently.summary}</h1>
           <div className="flex flex-col items-center justify-center">
             <h1 className="">Currently</h1>
             <h1 className="text-4xl">
