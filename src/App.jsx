@@ -66,12 +66,12 @@ const App = () => {
   };
 
   return (
-    <>
-      <div className="max-w-md rounded p-4 bg-gray-300 mb-4 shadow">
-        <h1 className="text-xl font-medium">Search</h1>
+    <div className="grid gap-4 m-4 lg:grid-cols-3 items-center">
+      <div className="max-w-md rounded p-4 bg-gray-700 shadow">
+        <h1 className="text-xl font-medium text-gray-100">Search</h1>
         <div className="relative mt-4">
           <input
-            className="rounded focus:outline-none focus:ring w-full p-1"
+            className="rounded focus:outline-none focus:ring focus:ring-blue-400 w-full p-1"
             type="text"
             placeholder="Enter Place Name"
             value={searchInput}
@@ -102,7 +102,7 @@ const App = () => {
       </div>
 
       <div
-        className={`max-w-md rounded shadow p-4 text-lg font-medium transition-colors duration-1000 ease-in-out ${theme}`}
+        className={`max-w-md lg:col-start-1 rounded shadow p-4 text-lg font-medium transition-colors duration-1000 ease-in-out ${theme}`}
       >
         <div className="flex justify-between items-center gap-6 text-center border-b-2 border-black pb-4">
           <img
@@ -126,7 +126,14 @@ const App = () => {
           <h5 className="text-xs">{location}</h5>
         </div>
       </div>
-    </>
+      <div className="rounded shadow overflow-hidden lg:col-start-2 lg:row-span-2 lg:col-span-2 lg:row-start-1 h-72 lg:max-w-full max-w-md">
+        <img
+          // className="h-full w-full"
+          src="https://cdn.theatlantic.com/thumbor/XFmbOxPnb_Pmkbz5hwoBPzMmrNo=/900x599/media/img/photo/2016/10/2016-national-geographic-nature-pho/n01_479708-8955001/original.jpg"
+          alt="hippo"
+        />
+      </div>
+    </div>
   );
 };
 

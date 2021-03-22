@@ -1,5 +1,9 @@
 body {
-  @apply bg-gray-200 p-4;
+  @apply bg-gray-200;
+}
+
+#root {
+  @apply max-w-screen-lg m-auto;
 }
 
 .hot {
