@@ -29,7 +29,7 @@ const WeatherCard = () => {
 
   return (
     <div
-      className={`grid max-w-md md:col-start-1 rounded shadow p-4 text-lg font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
+      className={`grid max-w-md md:col-start-1 rounded shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
     >
       <div className="flex items-center justify-between gap-6 pb-4 text-center border-b-2 border-black">
         <img
@@ -37,10 +37,10 @@ const WeatherCard = () => {
           alt="icon"
           src={weatherIcons[weatherData.currently.icon.replaceAll('-', '_')]}
         />
-        <h1 className="text-2xl">{weatherData.currently.summary}</h1>
+        <h1 className="text-xl">{weatherData.currently.summary}</h1>
         <div className="flex flex-col items-center justify-center">
           <h1 className="">Currently</h1>
-          <h1 className="text-4xl">
+          <h1 className="text-3xl">
             {Math.round(weatherData.currently.apparentTemperature)}°C
           </h1>
         </div>
@@ -50,7 +50,7 @@ const WeatherCard = () => {
           alt="location"
           src="https://img.icons8.com/material-outlined/24/000000/marker.png"
         />
-        <h5 className="text-xs">{location.name}</h5>
+        <h5 className="text-sm">{location.name}</h5>
       </div>
     </div>
   );

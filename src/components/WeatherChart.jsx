@@ -23,7 +23,7 @@ const options = {
     xAxes: [
       {
         gridLines: {
-          display: true,
+          display: false,
         },
         ticks: {
           fontColor: 'black',
@@ -35,7 +35,7 @@ const options = {
     yAxes: [
       {
         gridLines: {
-          display: true,
+          display: false,
         },
         ticks: {
           fontColor: 'black',
@@ -57,7 +57,7 @@ const WeatherChart = () => {
     average = [],
     high = [];
   weatherData.daily?.data.forEach((daily) => {
-    labels.push(dayjs.unix(daily.time).format('ddd, DD'));
+    labels.push(dayjs.unix(daily.time).format('dd-DD'));
     low.push(Math.round(daily.apparentTemperatureLow));
     average.push(
       Math.round(
@@ -74,7 +74,8 @@ const WeatherChart = () => {
         data: low,
         fill: true,
         backgroundColor: '#BFDBFE',
-        borderColor: '#312E81',
+        borderColor: 'rgba(60,60,60,1)',
+        borderWidth: 1,
       },
       {
         label: 'Average',
@@ -82,13 +83,15 @@ const WeatherChart = () => {
         fill: true,
         backgroundColor: '#FBBF24',
         borderColor: 'rgba(60,60,60,1)',
+        borderWidth: 1,
       },
       {
         label: 'High',
         data: high,
         fill: true,
-        backgroundColor: '#7F1D1D',
+        backgroundColor: '#DC2626',
         borderColor: 'rgba(60,60,60,1)',
+        borderWidth: 1,
       },
     ],
   };
