@@ -10,7 +10,10 @@ const App = () => {
   return (
     <LocationProvider>
       <WeatherProvider>
-        <div className="grid gap-4 m-4 md:grid-cols-2 lg:grid-cols-3">
+        <header className="w-full min-w-full p-4 mb-4 text-xl font-bold text-gray-100 bg-gray-500 rounded-b shadow">
+          <a href="https://shnk.tech">SHNK.TECH</a>
+        </header>
+        <div className="grid gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
           <SearchCard />
           <WeatherCard />
           <div className="max-w-md p-4 bg-gray-300 rounded shadow md:col-start-2 md:row-span-2 md:col-span-2 md:row-start-1 lg:max-w-full">

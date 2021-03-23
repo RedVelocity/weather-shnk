@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-html {
-  @apply p-0 m-0;
-}
-
 body {
-  @apply p-0 m-0 bg-gray-200;
+  @apply bg-gray-200;
   font-family: 'Montserrat', sans-serif;
 }
 
 #root {
-  @apply flex justify-center max-w-screen-lg m-auto;
+  @apply w-full max-w-screen-lg m-auto;
 }
 
 .hot {
