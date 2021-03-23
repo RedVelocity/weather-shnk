@@ -25,12 +25,23 @@ const App = () => {
         <div className="p-4 mt-4 text-gray-100 bg-gray-500 shadow">
           <div className="flex justify-between text-xs">
             <span>
-              <a href="https://www.freepik.com" title="Freepik">
-                Icons made by Freepik
-              </a>
-              <a href="https://www.flaticon.com/" title="Flaticon">
+              Icons made by
+              <a
+                className="text-blue-300"
+                href="https://www.freepik.com"
+                title="Freepik"
+              >
                 {' '}
-                from www.flaticon.com
+                Freepik{' '}
+              </a>
+              from
+              <a
+                className="text-blue-300"
+                href="https://www.flaticon.com/"
+                title="Flaticon"
+              >
+                {' '}
+                www.flaticon.com
               </a>
             </span>
             <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
