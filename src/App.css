@@ -4,7 +4,9 @@ body {
   @apply bg-gray-200;
   font-family: 'Montserrat', sans-serif;
 }
-
+#root {
+  @apply flex flex-col min-h-screen;
+}
 .hot {
   @apply bg-red-600;
 }
