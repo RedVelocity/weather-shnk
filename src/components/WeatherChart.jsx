@@ -43,7 +43,7 @@ const options = {
           fontSize: 14,
           stepSize: 5,
           callback: (tick, index, values) =>
-            index === values.length - 1 || index === 0 ? '' : tick,
+            index === values.length - 1 ? '' : tick,
         },
       },
     ],
