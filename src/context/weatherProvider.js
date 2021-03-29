@@ -4,7 +4,10 @@ const WeatherContext = createContext(undefined);
 
 const WeatherProvider = ({ children }) => {
   const [weatherData, setWeatherData] = useState({
-    currently: { apparentTemperature: 0, summary: '--', icon: 'clear-day' },
+    current: {
+      feels_like: 0,
+      weather: [{ icon: '01d', description: '--' }],
+    },
   });
 
   return (

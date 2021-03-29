@@ -56,15 +56,13 @@ const WeatherChart = () => {
     low = [],
     average = [],
     high = [];
-  weatherData.daily?.data.forEach((daily) => {
-    labels.push(dayjs.unix(daily.time).format('dd-DD'));
-    low.push(Math.round(daily.apparentTemperatureLow));
+  weatherData.daily?.forEach((daily) => {
+    labels.push(dayjs.unix(daily.dt).format('dd-DD'));
+    low.push(Math.round(daily.feels_like.night));
     average.push(
-      Math.round(
-        (daily.apparentTemperatureHigh + daily.apparentTemperatureLow) / 2
-      )
+      Math.round((daily.feels_like.day + daily.feels_like.night) / 2)
     );
-    high.push(Math.round(daily.apparentTemperatureHigh));
+    high.push(Math.round(daily.feels_like.day));
   });
   const data = {
     labels,

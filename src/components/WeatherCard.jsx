@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import weatherIcons from '../assets/svg/weatherIcons';
+// import weatherIcons from '../assets/svg/weatherIcons';
 import { WeatherContext } from '../context/weatherProvider';
 import { getLocation, getWeather } from '../API';
 import { LocationContext } from '../context/locationProvider';
@@ -8,8 +8,8 @@ const WeatherCard = () => {
   const { weatherData, setWeatherData } = useContext(WeatherContext);
 
   let theme;
-  if (weatherData.currently.apparentTemperature <= 15) theme = 'cold';
-  else if (weatherData.currently.apparentTemperature <= 28) theme = 'mild';
+  if (weatherData.current.feels_like <= 15) theme = 'cold';
+  else if (weatherData.current.feels_like <= 28) theme = 'mild';
   else theme = 'hot';
 
   const { location, setLocation } = useContext(LocationContext);
@@ -35,13 +35,15 @@ const WeatherCard = () => {
         <img
           className="w-16 h-16"
           alt="icon"
-          src={weatherIcons[weatherData.currently.icon.replaceAll('-', '_')]}
+          src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`}
         />
-        <h1 className="text-2xl md:text-xl">{weatherData.currently.summary}</h1>
+        <h1 className="text-2xl md:text-xl">
+          {weatherData.current.weather[0].description}
+        </h1>
         <div className="flex flex-col items-center justify-center">
           <h1 className="">Currently</h1>
           <h1 className="text-4xl">
-            {Math.round(weatherData.currently.apparentTemperature)}°C
+            {Math.round(weatherData.current.feels_like)}°C
           </h1>
         </div>
       </div>
