@@ -10,7 +10,7 @@ const App = () => {
   return (
     <LocationProvider>
       <WeatherProvider>
-        <header className="p-4 mb-4 text-xl font-bold text-gray-100 bg-red-500 shadow">
+        <header className="p-4 mb-4 text-xl font-bold bg-red-500 shadow">
           <a href="https://shnk.tech">SHNK.TECH</a>
         </header>
         <div className="flex-1 w-full max-w-screen-lg m-auto">
@@ -22,12 +22,12 @@ const App = () => {
             </div>
           </div>
         </div>
-        <footer className="p-4 mt-4 text-gray-100 bg-blue-400 shadow">
+        <footer className="p-4 mt-4 font-semibold bg-blue-400 shadow">
           <div className="flex justify-between text-xs">
             <span>
               Icons made by
               <a
-                className="text-blue-200"
+                className="text-yellow-200"
                 href="https://www.freepik.com"
                 title="Freepik"
               >
@@ -36,7 +36,7 @@ const App = () => {
               </a>
               from
               <a
-                className="text-blue-200"
+                className="text-yellow-200"
                 href="https://www.flaticon.com/"
                 title="Flaticon"
               >
