@@ -22,30 +22,30 @@ const App = () => {
             </div>
           </div>
         </div>
-        <footer className="p-4 mt-4 font-semibold bg-blue-400 shadow">
-          <div className="flex justify-between text-xs">
-            <span>
-              Icons made by
-              <a
-                className="text-yellow-200"
-                href="https://www.freepik.com"
-                title="Freepik"
-              >
-                {' '}
-                Freepik{' '}
-              </a>
-              from
-              <a
-                className="text-yellow-200"
-                href="https://www.flaticon.com/"
-                title="Flaticon"
-              >
-                {' '}
-                www.flaticon.com
-              </a>
-            </span>
-            <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
-          </div>
+        <footer className="p-4 mt-4 text-xs font-semibold bg-blue-400 shadow">
+          {/* <div className="flex justify-between text-xs"> */}
+          {/* <span>
+            Icons made by
+            <a
+              className="text-yellow-200"
+              href="https://www.freepik.com"
+              title="Freepik"
+            >
+              {' '}
+              Freepik{' '}
+            </a>
+            from
+            <a
+              className="text-yellow-200"
+              href="https://www.flaticon.com/"
+              title="Flaticon"
+            >
+              {' '}
+              www.flaticon.com
+            </a>
+          </span> */}
+          <a href="https://openweathermap.org/">Powered by OpenWeather</a>
+          {/* </div> */}
         </footer>
       </WeatherProvider>
     </LocationProvider>
