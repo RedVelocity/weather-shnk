@@ -96,7 +96,9 @@ const WeatherChart = () => {
 
   return (
     <>
-      <h1 className="mb-4 text-xl font-medium">{weatherData.daily?.summary}</h1>
+      <h1 className="mb-4 text-xl font-medium">
+        {weatherData.daily?.weather[0].description}
+      </h1>
       <Line height={120} data={data} options={options} />
     </>
   );
