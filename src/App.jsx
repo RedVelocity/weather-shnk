@@ -13,7 +13,7 @@ const App = () => {
         <header className="p-4 mb-4 text-xl font-bold text-gray-100 bg-gray-500 shadow">
           <a href="https://shnk.tech">SHNK.TECH</a>
         </header>
-        <div className="flex-1 max-w-screen-lg min-w-full m-auto">
+        <div className="flex-1 w-full max-w-screen-lg m-auto">
           <div className="grid gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
             <SearchCard />
             <WeatherCard />
