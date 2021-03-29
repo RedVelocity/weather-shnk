@@ -8,6 +8,7 @@ const WeatherProvider = ({ children }) => {
       feels_like: 0,
       weather: [{ icon: '01d', description: '--' }],
     },
+    daily: [],
   });
 
   return (

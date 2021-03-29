@@ -96,8 +96,11 @@ const WeatherChart = () => {
 
   return (
     <>
-      <h1 className="mb-4 text-xl font-medium">
-        {weatherData.daily?.weather[0].description}
+      <h1 className="mb-4 text-xl font-medium capitalize">
+        {weatherData.daily[0] &&
+          weatherData.daily[0].weather[0].description +
+            ' on ' +
+            dayjs.unix(weatherData.daily[0].dt).format('dddd')}
       </h1>
       <Line height={120} data={data} options={options} />
     </>
