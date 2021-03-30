@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
-// import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-// mapboxgl.workerClass = MapboxWorker;
+
+mapboxgl.workerClass = MapboxWorker;
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
 
