@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
 import WeatherChart from './components/WeatherChart';
 import SearchCard from './components/SearchCard';
 import WeatherCard from './components/WeatherCard';
+import WeatherMap from './components/WeatherMap';
 import { LocationProvider } from './context/locationProvider';
 import { WeatherProvider } from './context/weatherProvider';
+
+import './App.css';
 
 const App = () => {
   return (
@@ -21,31 +23,10 @@ const App = () => {
               <WeatherChart />
             </div>
           </div>
+          <WeatherMap />
         </div>
         <footer className="p-4 mt-4 text-xs font-semibold bg-blue-400 shadow">
-          {/* <div className="flex justify-between text-xs"> */}
-          {/* <span>
-            Icons made by
-            <a
-              className="text-yellow-200"
-              href="https://www.freepik.com"
-              title="Freepik"
-            >
-              {' '}
-              Freepik{' '}
-            </a>
-            from
-            <a
-              className="text-yellow-200"
-              href="https://www.flaticon.com/"
-              title="Flaticon"
-            >
-              {' '}
-              www.flaticon.com
-            </a>
-          </span> */}
           <a href="https://openweathermap.org/">Powered by OpenWeather</a>
-          {/* </div> */}
         </footer>
       </WeatherProvider>
     </LocationProvider>
