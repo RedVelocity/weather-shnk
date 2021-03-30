@@ -1,26 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { LocationContext } from '../context/locationProvider';
 
 mapboxgl.workerClass = MapboxWorker;
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
 
 const WeatherMap = () => {
+  const { location } = useContext(LocationContext);
   const mapContainerRef = useRef(null);
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-104.9876, 39.7405],
-      zoom: 12.5,
-      dragPan: false,
+      center: [location.longitude, location.latitude],
+      zoom: 10,
+      interactive: false,
     });
-    new mapboxgl.Marker({ color: 'teal' })
-      .setLngLat([-104.9876, 39.7405])
+    new mapboxgl.Marker({ color: '#EF4444' })
+      .setLngLat([location.longitude, location.latitude])
       .addTo(map);
 
     // add navigation control (the +/- zoom buttons)
@@ -28,7 +30,7 @@ const WeatherMap = () => {
 
     // clean up on unmount
     return () => map.remove();
-  }, []);
+  }, [location]);
 
   return <div className="m-2 rounded shadow h-72" ref={mapContainerRef}></div>;
 };
