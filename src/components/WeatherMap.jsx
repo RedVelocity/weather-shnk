@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
+// import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
+
 import 'mapbox-gl/dist/mapbox-gl.css';
+// mapboxgl.workerClass = MapboxWorker;
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
 
@@ -25,12 +28,7 @@ const WeatherMap = () => {
     return () => map.remove();
   }, []);
 
-  return (
-    <div
-      className="absolute top-0 bottom-0 m-2 rounded shadow h-72"
-      ref={mapContainerRef}
-    ></div>
-  );
+  return <div className="m-2 rounded shadow h-72" ref={mapContainerRef}></div>;
 };
 
 export default WeatherMap;

@@ -3,6 +3,7 @@ import { getSuggestions, getWeather } from '../API';
 import { LocationContext } from '../context/locationProvider';
 import { WeatherContext } from '../context/weatherProvider';
 import useDebounce from '../hooks/useDebounce';
+
 const SearchCard = () => {
   const [suggestions, setSuggestions] = useState([]);
   const { weatherData, setWeatherData } = useContext(WeatherContext);
