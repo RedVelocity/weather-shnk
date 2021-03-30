@@ -102,7 +102,7 @@ const WeatherChart = () => {
             ' on ' +
             dayjs.unix(weatherData.daily[0].dt).format('dddd')}
       </h1>
-      <Line height={120} data={data} options={options} />
+      <Line height={110} data={data} options={options} />
     </>
   );
 };

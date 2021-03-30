@@ -58,7 +58,7 @@ const SearchCard = () => {
       <h1 className="text-xl font-medium ">Search</h1>
       <div className="relative mt-4">
         <input
-          className="w-full px-2 py-1 bg-gray-100 rounded ring-2 ring-gray-500 focus:outline-none focus:ring focus:ring-blue-400"
+          className="w-full p-2 bg-gray-100 rounded shadow-lg focus:outline-none focus:ring focus:ring-blue-400"
           type="text"
           placeholder="Place Name"
           value={searchInput}
