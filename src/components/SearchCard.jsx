@@ -71,7 +71,7 @@ const SearchCard = () => {
               !showSuggestions && 'opacity-0 invisible'
             }`}
           >
-            <ul className="overflow-x-hidden max-h-48">
+            <ul className="overflow-x-hidden max-h-64">
               {suggestions.map((suggestion) => (
                 <li
                   className={`hover-${theme} cursor-pointer px-2 py-1 rounded mx-1`}
