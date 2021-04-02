@@ -31,13 +31,13 @@ const WeatherCard = () => {
     <div
       className={`grid md:col-start-1 text-sm rounded shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
     >
-      <div className="flex items-center gap-6 pb-2 text-center border-b-2 border-black justify-evenly">
+      <div className="flex items-center gap-6 pb-4 text-center border-b-2 border-black justify-evenly">
         <img
           className="w-16 h-16"
           alt="icon"
           src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`}
         />
-        <h1 className="text-2xl font-bold capitalize md:text-xl">
+        <h1 className="text-2xl font-bold capitalize">
           {weatherData.current.weather[0].description}
         </h1>
         <div className="flex flex-col items-center justify-center">
@@ -47,7 +47,7 @@ const WeatherCard = () => {
           </h1>
         </div>
       </div>
-      <div className="flex items-center pt-2 space-x-1">
+      <div className="flex items-center pt-4 space-x-1">
         <img
           alt="location"
           src="https://img.icons8.com/material-outlined/24/000000/marker.png"
