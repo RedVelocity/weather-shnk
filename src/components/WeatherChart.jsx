@@ -87,7 +87,7 @@ const WeatherChart = () => {
         label: 'High',
         data: high,
         fill: true,
-        backgroundColor: '#B8000D',
+        backgroundColor: '#E3A6A8',
         borderColor: 'rgba(60,60,60,1)',
         borderWidth: 1,
       },

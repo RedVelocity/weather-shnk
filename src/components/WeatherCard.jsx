@@ -39,15 +39,15 @@ const WeatherCard = () => {
     >
       <div className="flex items-center gap-6 p-4 text-center border-b-2 border-black justify-evenly">
         <img
-          className="w-16 h-16"
+          className="w-20 h-20"
           alt="icon"
           src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`}
         />
         <h1 className="text-3xl font-bold capitalize md:text-2xl">
           {weatherData.current.weather[0].description}
         </h1>
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="">Currently</h1>
+        <div>
+          Currently
           <h1 className="text-4xl">
             {Math.round(weatherData.current.feels_like)}°C
           </h1>
