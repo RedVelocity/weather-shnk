@@ -24,7 +24,7 @@ body {
 }
 
 .hover-hot {
-  @apply hover:bg-red-600;
+  @apply hover:bg-red-600 hover:text-gray-100;
 }
 
 .hover-cold {
