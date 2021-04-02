@@ -7,6 +7,8 @@ const LocationProvider = ({ children }) => {
     name: '-- Grant Location Access',
     latitude: 0,
     longitude: 0,
+    curLat: 0,
+    curLon: 0,
   });
 
   return (

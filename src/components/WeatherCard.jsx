@@ -20,7 +20,13 @@ const WeatherCard = () => {
         const { latitude, longitude } = position.coords;
         const weather = await getWeather(latitude, longitude);
         const locationName = await getLocation(latitude, longitude);
-        setLocation({ name: locationName, latitude, longitude });
+        setLocation({
+          name: locationName,
+          latitude,
+          longitude,
+          curLat: latitude,
+          curLon: longitude,
+        });
         weather !== 0 && setWeatherData(weather);
       });
     }

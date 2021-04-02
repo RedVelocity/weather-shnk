@@ -19,12 +19,11 @@ const SearchCard = () => {
 
   useEffect(
     () => {
-      console.log(`debounce`);
       if (debouncedSearchTerm) {
         const handleSearch = async () => {
           const features = await getSuggestions(
-            location.latitude,
-            location.longitude,
+            location.curLat,
+            location.curLon,
             debouncedSearchTerm
           );
           setSuggestions(features);
@@ -34,13 +33,15 @@ const SearchCard = () => {
         setSuggestions([]);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [debouncedSearchTerm] // Only call effect if debounced search term changes
   );
 
   const handleInputChange = async (e) => {
-    console.log(`handle`);
     const loc = suggestions.find((suggestion) => suggestion.id === e.target.id);
+    console.log(`suggestions`, e.target.id);
     setLocation({
+      ...location,
       name: e.target.innerText,
       latitude: loc.geometry.coordinates[1],
       longitude: loc.geometry.coordinates[0],
@@ -79,7 +80,10 @@ const SearchCard = () => {
                   id={suggestion.id}
                   onClick={handleInputChange}
                 >
-                  <h3 className="text-lg underline text-bold">
+                  <h3
+                    className="text-lg underline text-bold"
+                    id={suggestion.id}
+                  >
                     {suggestion.text_en}
                   </h3>
                   {suggestion.context.map((ctx, index) =>

@@ -10,7 +10,7 @@ exports.handler = async (event) => {
 
   try {
     const { data } = await axios.get(API_ENDPOINT);
-    console.log(`proximity`, proximity);
+    // console.log(`proximity`, proximity);
     return { statusCode: 200, body: JSON.stringify(data) };
   } catch (error) {
     return { statusCode: 422, body: String(error) };
