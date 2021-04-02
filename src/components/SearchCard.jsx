@@ -39,7 +39,6 @@ const SearchCard = () => {
 
   const handleInputChange = async (e) => {
     const loc = suggestions.find((suggestion) => suggestion.id === e.target.id);
-    console.log(`suggestions`, e.target.id);
     setLocation({
       ...location,
       name: e.target.innerText,
@@ -80,10 +79,7 @@ const SearchCard = () => {
                   id={suggestion.id}
                   onClick={handleInputChange}
                 >
-                  <h3
-                    className="text-lg underline text-bold"
-                    id={suggestion.id}
-                  >
+                  <h3 className="text-lg underline pointer-events-none text-bold">
                     {suggestion.text_en}
                   </h3>
                   {suggestion.context.map((ctx, index) =>
