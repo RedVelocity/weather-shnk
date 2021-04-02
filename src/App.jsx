@@ -18,13 +18,13 @@ const App = () => {
           </div>
         </header>
         <div className="flex-1 w-full max-w-screen-lg m-auto">
-          <div className="grid gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid justify-center gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
             <SearchCard />
             <WeatherCard />
             <div className="p-4 bg-gray-300 rounded shadow md:col-start-2 md:row-span-2 md:col-span-2 md:row-start-1">
               <WeatherChart />
             </div>
-            <div className="rounded shadow md:col-span-3">
+            <div className="md:col-span-3">
               <WeatherMap />
             </div>
           </div>
