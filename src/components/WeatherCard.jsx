@@ -48,7 +48,7 @@ const WeatherCard = () => {
         </h1>
         <div>
           Currently
-          <h1 className="text-4xl">
+          <h1 className="text-3xl font-bold">
             {Math.round(weatherData.current.feels_like)}°C
           </h1>
         </div>

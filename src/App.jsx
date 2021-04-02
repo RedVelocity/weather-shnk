@@ -12,7 +12,7 @@ const App = () => {
   return (
     <LocationProvider>
       <WeatherProvider>
-        <header className="p-4 mb-4 text-2xl font-bold bg-blue-300 shadow">
+        <header className="p-4 text-2xl font-bold bg-blue-300 shadow">
           <div className="max-w-screen-lg m-auto">
             <a href="https://shnk.tech">SHNK.TECH</a>
           </div>
@@ -29,7 +29,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <footer className="p-4 mt-4 font-semibold bg-blue-300 shadow ">
+        <footer className="p-4 font-semibold bg-blue-300 shadow ">
           <div className="max-w-screen-lg m-auto">
             <a href="https://openweathermap.org/">Powered by OpenWeather</a>
           </div>
