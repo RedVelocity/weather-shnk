@@ -31,7 +31,7 @@ const WeatherCard = () => {
     <div
       className={`grid md:col-start-1 text-sm rounded shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
     >
-      <div className="flex items-center justify-between gap-6 pb-2 text-center border-b-2 border-black">
+      <div className="flex items-center gap-6 pb-2 text-center border-b-2 border-black justify-evenly">
         <img
           className="w-16 h-16"
           alt="icon"
