@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-.mapboxgl-canvas > * {
-  @apply outline-none;
+html {
+  font-size: 14px;
 }
-
 body {
   @apply bg-gray-200;
   font-family: 'Montserrat', sans-serif;
@@ -11,14 +10,13 @@ body {
 #root {
   @apply flex flex-col min-h-screen;
 }
+
 .hot {
   @apply bg-red-500;
 }
-
 .cold {
   @apply text-indigo-900 bg-blue-200;
 }
-
 .mild {
   @apply bg-yellow-400;
 }
@@ -26,11 +24,9 @@ body {
 .hover-hot {
   @apply hover:bg-red-600 hover:text-gray-100;
 }
-
 .hover-cold {
   @apply hover:bg-blue-200 hover:text-indigo-900;
 }
-
 .hover-mild {
   @apply hover:bg-yellow-400;
 }
