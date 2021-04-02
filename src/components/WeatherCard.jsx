@@ -29,7 +29,7 @@ const WeatherCard = () => {
 
   return (
     <div
-      className={`grid max-w-md md:col-start-1 rounded shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
+      className={`grid md:col-start-1 rounded shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
     >
       <div className="flex items-center justify-between gap-6 pb-4 text-center border-b-2 border-black">
         <img

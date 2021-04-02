@@ -54,7 +54,7 @@ const SearchCard = () => {
   };
 
   return (
-    <div className="max-w-md p-4 bg-yellow-400 rounded shadow">
+    <div className="p-4 bg-yellow-400 rounded shadow">
       <h1 className="text-xl font-medium ">Search</h1>
       <div className="relative mt-4">
         <input
