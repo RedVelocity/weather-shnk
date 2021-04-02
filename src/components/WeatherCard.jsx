@@ -37,7 +37,7 @@ const WeatherCard = () => {
           alt="icon"
           src={`https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`}
         />
-        <h1 className="text-2xl font-bold capitalize">
+        <h1 className="text-3xl font-bold capitalize md:text-2xl">
           {weatherData.current.weather[0].description}
         </h1>
         <div className="flex flex-col items-center justify-center">

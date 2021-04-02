@@ -17,7 +17,7 @@ const App = () => {
             <a href="https://shnk.tech">SHNK.TECH</a>
           </div>
         </header>
-        <div className="flex-1 w-full max-w-screen-lg m-auto">
+        <div className="w-full max-w-screen-lg m-auto xl:flex-1">
           <div className="grid gap-4 p-2 md:grid-cols-3">
             <SearchCard />
             <WeatherCard />
