@@ -96,7 +96,7 @@ const WeatherChart = () => {
 
   return (
     <>
-      <h1 className="mb-4 text-xl font-medium capitalize">
+      <h1 className="mb-4 text-xl font-semibold capitalize">
         {weatherData.daily[0] &&
           weatherData.daily[0].weather[0].description +
             ' on ' +

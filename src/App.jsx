@@ -24,8 +24,10 @@ const App = () => {
             <div className="p-4 bg-gray-300 rounded shadow md:col-start-2 md:row-span-2 md:col-span-2 md:row-start-1">
               <WeatherChart />
             </div>
+            <div className="rounded shadow md:col-span-3">
+              <WeatherMap />
+            </div>
           </div>
-          <WeatherMap />
         </div>
         <footer className="p-4 mt-4 text-xs font-semibold bg-blue-300 shadow">
           <div className="max-w-screen-lg m-auto">
