@@ -9,7 +9,7 @@ const SearchCard = () => {
   const { weatherData, setWeatherData } = useContext(WeatherContext);
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [searchInput, setSearchInput] = useState('');
-  const { setLocation } = useContext(LocationContext);
+  const { setLocation, location } = useContext(LocationContext);
   const debouncedSearchTerm = useDebounce(searchInput, 500);
 
   let theme;
@@ -23,8 +23,8 @@ const SearchCard = () => {
       if (debouncedSearchTerm) {
         const handleSearch = async () => {
           const features = await getSuggestions(
-            null,
-            null,
+            location.latitude,
+            location.longitude,
             debouncedSearchTerm
           );
           setSuggestions(features);
@@ -67,7 +67,7 @@ const SearchCard = () => {
         />
         {suggestions.length > 0 && (
           <div
-            className={`absolute transition duration-300 bg-white w-full rounded shadow p-2 mt-2 z-10 ${
+            className={`absolute transition duration-300 bg-white w-full rounded shadow p-2 z-10 ${
               !showSuggestions && 'opacity-0 invisible'
             }`}
           >
@@ -79,7 +79,14 @@ const SearchCard = () => {
                   id={suggestion.id}
                   onClick={handleInputChange}
                 >
-                  {suggestion.place_name_en}
+                  <h3 className="text-lg underline text-bold">
+                    {suggestion.text_en}
+                  </h3>
+                  {suggestion.context.map((ctx, index) =>
+                    suggestion.context.length === index + 1
+                      ? `${ctx.text_en}.`
+                      : `${ctx.text_en}, `
+                  )}
                 </li>
               ))}
             </ul>
