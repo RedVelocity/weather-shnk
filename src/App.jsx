@@ -17,8 +17,8 @@ const App = () => {
             <a href="https://shnk.tech">SHNK.TECH</a>
           </div>
         </header>
-        <div className="w-full max-w-screen-lg mx-auto xl:flex-1">
-          <div className="grid gap-4 p-2 md:grid-cols-3">
+        <div className="flex-1 w-full max-w-screen-lg mx-auto">
+          <div className="grid gap-4 p-4 md:grid-cols-3">
             <SearchCard />
             <WeatherCard />
             <div className="p-4 bg-gray-300 rounded shadow md:col-start-2 md:row-span-2 md:col-span-2 md:row-start-1">
@@ -29,7 +29,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <footer className="p-4 mt-4 text-xs font-semibold bg-blue-300 shadow">
+        <footer className="p-4 mt-4 text-xs font-semibold bg-blue-300 shadow ">
           <div className="max-w-screen-lg m-auto">
             <a href="https://openweathermap.org/">Powered by OpenWeather</a>
           </div>

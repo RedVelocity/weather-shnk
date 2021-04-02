@@ -34,7 +34,7 @@ const WeatherMap = () => {
     return () => map.remove();
   }, [longitude, latitude]);
 
-  return <div className="rounded shadow h-72" ref={mapContainerRef}></div>;
+  return <div className="rounded shadow h-96" ref={mapContainerRef}></div>;
 };
 
 export default WeatherMap;
