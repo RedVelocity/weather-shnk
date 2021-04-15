@@ -9,7 +9,7 @@ const options = {
   legend: {
     display: false,
     labels: {
-      fontColor: 'black',
+      // fontColor: 'black',
       fontFamily: ['Montserrat', 'sans-serif'],
     },
     position: 'bottom',
@@ -27,7 +27,7 @@ const options = {
           display: false,
         },
         ticks: {
-          fontColor: 'black',
+          // fontColor: 'black',
           fontFamily: ['Montserrat', 'sans-serif'],
           fontSize: 12,
         },
@@ -39,7 +39,7 @@ const options = {
           display: false,
         },
         ticks: {
-          fontColor: 'black',
+          // fontColor: 'black',
           fontFamily: ['Montserrat', 'sans-serif'],
           fontSize: 12,
           stepSize: 5,
