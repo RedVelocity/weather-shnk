@@ -54,7 +54,7 @@ const SearchCard = () => {
   };
 
   return (
-    <div className="p-4 rounded shadow bg-dark">
+    <div className="p-4 shadow rounded-xl bg-dark">
       <h1 className="text-xl font-semibold text-gray-200">Search</h1>
       <div className="relative mt-4">
         <input
@@ -67,14 +67,14 @@ const SearchCard = () => {
         />
         {suggestions.length > 0 && (
           <div
-            className={`absolute transition duration-300 bg-white w-full rounded shadow p-2 z-10 ${
+            className={`absolute transition duration-300 bg-white w-full rounded-xl shadow p-2 z-10 ${
               !showSuggestions && 'opacity-0 invisible'
             }`}
           >
             <ul className="overflow-x-hidden max-h-64">
               {suggestions.map((suggestion) => (
                 <li
-                  className={`hover-${theme} cursor-pointer px-2 py-1 rounded mx-1`}
+                  className={`hover-${theme} cursor-pointer px-2 py-1 rounded-xl mx-1`}
                   key={suggestion.id}
                   id={suggestion.id}
                   onClick={handleInputChange}

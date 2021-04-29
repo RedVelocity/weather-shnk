@@ -18,7 +18,7 @@ const WeatherMap = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/redvelocity/ckmw0p18z11yi17ntonzq7yfd',
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: [longitude, latitude],
       zoom: 10,
       interactive: false,
@@ -34,7 +34,7 @@ const WeatherMap = () => {
     return () => map.remove();
   }, [longitude, latitude]);
 
-  return <div className="rounded shadow h-96" ref={mapContainerRef}></div>;
+  return <div className="shadow rounded-xl h-96" ref={mapContainerRef}></div>;
 };
 
 export default WeatherMap;
