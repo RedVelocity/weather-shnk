@@ -31,5 +31,5 @@ body {
   @apply hover:bg-blue-200 hover:text-indigo-900;
 }
 .hover-mild {
-  @apply hover:bg-yellow-400;
+  @apply hover:bg-pink-300;
 }
