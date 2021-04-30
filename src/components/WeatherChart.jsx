@@ -96,7 +96,7 @@ const WeatherChart = () => {
   };
 
   return (
-    <>
+    <div className="min-h-full p-4 text-gray-200 shadow rounded-xl bg-dark">
       <h1 className="mb-4 text-xl font-semibold capitalize">
         {weatherData.daily[0] &&
           weatherData.daily[0].weather[0].description +
@@ -104,7 +104,7 @@ const WeatherChart = () => {
             dayjs.unix(weatherData.daily[0].dt).format('dddd')}
       </h1>
       <Line height={90} data={data} options={options} />
-    </>
+    </div>
   );
 };
 

@@ -18,18 +18,18 @@ body {
   @apply bg-hot;
 }
 .cold {
-  @apply text-indigo-900 bg-cool;
+  @apply bg-cool;
 }
 .mild {
   @apply bg-mild;
 }
 
 .hover-hot {
-  @apply hover:bg-red-500 hover:text-gray-100;
+  @apply hover:bg-hot;
 }
 .hover-cold {
-  @apply hover:bg-blue-200 hover:text-indigo-900;
+  @apply hover:bg-cool;
 }
 .hover-mild {
-  @apply hover:bg-pink-300;
+  @apply hover:bg-mild;
 }
