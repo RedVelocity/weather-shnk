@@ -53,7 +53,7 @@ const WeatherCard = () => {
           <h1 className="text-4xl">{Math.round(weatherData.current.temp)}°C</h1>
         </div>
       </div>{' '}
-      <span className="p-2 tracking-wide text-center bg-gray-100 rounded">
+      <span className="p-2 text-sm tracking-wide text-center bg-gray-100 rounded">
         Feels Like: {Math.round(weatherData.current.feels_like)}°C | Humidity:{' '}
         {weatherData.current.humidity} | UV: {weatherData.current.uvi}
       </span>
