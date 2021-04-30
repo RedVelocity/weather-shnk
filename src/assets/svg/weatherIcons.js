@@ -7,7 +7,7 @@ import partlyCloudyNight from './partly-cloudy-night.svg';
 import rain from './rain.svg';
 import sleet from './sleet.svg';
 import thunderstorm from './thunderstorm.svg';
-import tornado from './tornado.svg';
+// import tornado from './tornado.svg';
 
 const weatherIcons = {
   '01d': clearDay,
@@ -28,7 +28,7 @@ const weatherIcons = {
   '13n': sleet,
   '50d': fog,
   '50n': fog,
-  tornado,
+  // tornado,
 };
 
 export default weatherIcons;
