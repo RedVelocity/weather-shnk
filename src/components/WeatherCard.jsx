@@ -37,7 +37,7 @@ const WeatherCard = () => {
 
   return (
     <div
-      className={`grid md:col-start-1 rounded-xl shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
+      className={`grid md:col-start-1 card p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
     >
       <>
         <div className="flex items-center gap-6 p-4 text-center justify-evenly">

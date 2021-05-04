@@ -96,14 +96,14 @@ const WeatherChart = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-full p-4 text-gray-200 shadow justify-evenly rounded-xl bg-dark">
-      <h1 className="mb-4 text-xl font-semibold capitalize">
+    <div className="flex flex-col min-h-full px-6 py-4 text-gray-200 card justify-evenly bg-dark">
+      <h1 className="mb-4 text-xl font-semibold tracking-wide capitalize">
         {weatherData.daily[0] &&
           weatherData.daily[0].weather[0].description +
             ' on ' +
             dayjs.unix(weatherData.daily[0].dt).format('dddd')}
       </h1>
-      <Line height={110} data={data} options={options} />
+      <Line height={100} data={data} options={options} />
     </div>
   );
 };

@@ -26,15 +26,13 @@ const WeatherMap = () => {
     new mapboxgl.Marker({ color: '#EF4444' })
       .setLngLat([longitude, latitude])
       .addTo(map);
-
     // add navigation control (the +/- zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-
     // clean up on unmount
     return () => map.remove();
   }, [longitude, latitude]);
 
-  return <div className="shadow rounded-xl h-96" ref={mapContainerRef}></div>;
+  return <div className="card h-96" ref={mapContainerRef}></div>;
 };
 
 export default WeatherMap;

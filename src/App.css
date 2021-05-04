@@ -6,6 +6,10 @@
   }
 }
 
+.card {
+  @apply rounded-l rounded-br shadow rounded-tr-xl;
+}
+
 body {
   @apply bg-gray-300;
   font-family: 'Montserrat', sans-serif;
