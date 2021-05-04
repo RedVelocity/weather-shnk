@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cool: '#00BBFF',
-        mild: '#F090CC',
-        hot: '#EF6A67',
-        dark: '#002255',
+        cool: 'var(--cool)',
+        mild: 'var(--mild)',
+        hot: 'var(--hot)',
+        dark: 'var(--dark)',
       },
     },
   },
