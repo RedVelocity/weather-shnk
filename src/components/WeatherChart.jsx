@@ -29,7 +29,7 @@ const options = {
         ticks: {
           fontColor: 'lightgray',
           fontFamily: ['Montserrat', 'sans-serif'],
-          fontSize: 12,
+          fontSize: 13,
         },
       },
     ],
@@ -41,7 +41,7 @@ const options = {
         ticks: {
           fontColor: 'lightgray',
           fontFamily: ['Montserrat', 'sans-serif'],
-          fontSize: 12,
+          fontSize: 13,
           stepSize: 5,
           callback: (tick, index, values) =>
             index === values.length - 1 ? '' : tick,
@@ -103,7 +103,7 @@ const WeatherChart = () => {
             ' on ' +
             dayjs.unix(weatherData.daily[0].dt).format('dddd')}
       </h1>
-      <Line className="flex-1" height={90} data={data} options={options} />
+      <Line height={110} data={data} options={options} />
     </div>
   );
 };
