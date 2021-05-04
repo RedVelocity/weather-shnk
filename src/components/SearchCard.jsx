@@ -13,8 +13,8 @@ const SearchCard = () => {
   const debouncedSearchTerm = useDebounce(searchInput, 500);
 
   let theme;
-  if (weatherData.current.feels_like <= 15) theme = 'cold';
-  else if (weatherData.current.feels_like <= 28) theme = 'mild';
+  if (weatherData.current?.feels_like <= 15) theme = 'cold';
+  else if (weatherData.current?.feels_like <= 28) theme = 'mild';
   else theme = 'hot';
 
   useEffect(

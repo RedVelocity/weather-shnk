@@ -8,8 +8,8 @@ const WeatherCard = () => {
   const { weatherData, setWeatherData } = useContext(WeatherContext);
 
   let theme;
-  if (weatherData.current.feels_like <= 15) theme = 'cold';
-  else if (weatherData.current.feels_like <= 28) theme = 'mild';
+  if (weatherData.current?.feels_like <= 15) theme = 'cold';
+  else if (weatherData.current?.feels_like <= 28) theme = 'mild';
   else theme = 'hot';
 
   const { location, setLocation } = useContext(LocationContext);
@@ -33,37 +33,41 @@ const WeatherCard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(`weatherData`, weatherData);
+  // console.log(`weatherData`, weatherData);
 
   return (
     <div
       className={`grid md:col-start-1 rounded-xl shadow p-4 font-semibold transition-colors duration-1000 ease-in-out ${theme}`}
     >
-      <div className="flex items-center gap-6 p-4 text-center justify-evenly">
-        <img
-          className="w-20 h-20"
-          alt="icon"
-          src={weatherIcons[weatherData.current.weather[0].icon]}
-        />
-        <h1 className="text-2xl font-bold capitalize">
-          {weatherData.current.weather[0].description}
-        </h1>
-        <div>
-          Currently
-          <h1 className="text-4xl">{Math.round(weatherData.current.temp)}°C</h1>
+      <>
+        <div className="flex items-center gap-6 p-4 text-center justify-evenly">
+          <img
+            className="w-20 h-20"
+            alt="icon"
+            src={weatherIcons[weatherData.current.weather[0].icon]}
+          />
+          <h1 className="text-2xl font-bold capitalize">
+            {weatherData.current.weather[0].description}
+          </h1>
+          <div>
+            Currently
+            <h1 className="text-4xl">
+              {Math.round(weatherData.current.temp)}°C
+            </h1>
+          </div>
+        </div>{' '}
+        <span className="p-2 text-sm tracking-wide text-center bg-gray-100 rounded">
+          Feels Like: {Math.round(weatherData.current.feels_like)}°C | Humidity:{' '}
+          {weatherData.current.humidity} | UV: {weatherData.current.uvi}
+        </span>
+        <div className="flex items-center pt-4 space-x-1">
+          <img
+            alt="location"
+            src="https://img.icons8.com/material-outlined/24/000000/marker.png"
+          />
+          <h5 className="text-sm">{location.name}</h5>
         </div>
-      </div>{' '}
-      <span className="p-2 text-sm tracking-wide text-center bg-gray-100 rounded">
-        Feels Like: {Math.round(weatherData.current.feels_like)}°C | Humidity:{' '}
-        {weatherData.current.humidity} | UV: {weatherData.current.uvi}
-      </span>
-      <div className="flex items-center pt-4 space-x-1">
-        <img
-          alt="location"
-          src="https://img.icons8.com/material-outlined/24/000000/marker.png"
-        />
-        <h5 className="text-sm">{location.name}</h5>
-      </div>
+      </>
     </div>
   );
 };
