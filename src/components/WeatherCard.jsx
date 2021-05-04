@@ -47,7 +47,7 @@ const WeatherCard = () => {
             src={weatherIcons[weatherData.current.weather[0].icon]}
           />
           <h1 className="text-2xl font-bold capitalize">
-            {weatherData.current.weather[0].description}
+            {weatherData.current?.weather[0].description}
           </h1>
           <div>
             Currently
