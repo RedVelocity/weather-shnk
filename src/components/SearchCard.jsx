@@ -5,11 +5,11 @@ import { WeatherContext } from '../context/weatherProvider';
 import useDebounce from '../hooks/useDebounce';
 
 const SearchCard = () => {
-  const [suggestions, setSuggestions] = useState([]);
   const { weatherData, setWeatherData } = useContext(WeatherContext);
+  const { setLocation, location } = useContext(LocationContext);
+  const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(true);
   const [searchInput, setSearchInput] = useState('');
-  const { setLocation, location } = useContext(LocationContext);
   const debouncedSearchTerm = useDebounce(searchInput, 500);
 
   let theme;

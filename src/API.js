@@ -31,3 +31,14 @@ export const getSuggestions = async (latitude, longitude, place) => {
     return 0;
   }
 };
+
+export const getTimezone = async (latitude, longitude) => {
+  const API_ENDPOINT = `.netlify/functions/getTimezone?latitude=${latitude}&longitude=${longitude}`;
+
+  try {
+    const { data } = await axios.get(API_ENDPOINT);
+    return data;
+  } catch (error) {
+    return 0;
+  }
+};

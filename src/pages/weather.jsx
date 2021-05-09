@@ -6,7 +6,7 @@ import SearchCard from '../components/SearchCard';
 
 const WeatherPage = () => {
   return (
-    <div className="grid gap-4 px-4 md:grid-cols-3">
+    <div className="grid max-w-xl gap-4 px-4 mx-auto md:max-w-full md:grid-cols-3">
       <SearchCard />
       <WeatherCard />
       <div className="md:col-start-2 md:row-span-2 md:col-span-2 md:row-start-1">
