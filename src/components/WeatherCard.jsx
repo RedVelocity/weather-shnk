@@ -72,7 +72,7 @@ const WeatherCard = () => {
           Feels Like: {Math.round(weatherData.current.feels_like)}°C | Humidity:{' '}
           {weatherData.current.humidity} | UV: {weatherData.current.uvi}
         </span>
-        <div className="flex items-center justify-between pt-4 space-x-1 text-xs">
+        <div className="flex items-center justify-between pt-4 space-x-2 text-xs">
           <div className="flex items-center">
             <img
               alt="location"
@@ -86,7 +86,7 @@ const WeatherCard = () => {
               src="https://img.icons8.com/material-outlined/20/000000/clock--v1.png"
             />
             <h5 className="ml-1">
-              Local Time - {dayjs.unix(locTime).utc().format('HH:mm')}
+              Local Time {dayjs.unix(locTime).utc().format('HH:mm')}
             </h5>
           </div>
         </div>
