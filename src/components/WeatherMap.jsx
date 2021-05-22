@@ -18,7 +18,7 @@ const WeatherMap = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/redvelocity/ckozcqbwp16v017qip75tam5d',
+      style: 'mapbox://styles/redvelocity/ckozmz39930fd17o235d58kon',
       center: [longitude, latitude],
       zoom: 10,
       interactive: false,
