@@ -18,7 +18,7 @@ const WeatherMap = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/light-v10',
+      style: 'mapbox://styles/redvelocity/ckoz7x43v38or17o1uh7ggm5q',
       center: [longitude, latitude],
       zoom: 10,
       interactive: false,
@@ -31,25 +31,27 @@ const WeatherMap = () => {
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     // add weather layer
     map.on('load', () => {
-      const layers = map.getStyle().layers;
+      // const layers = map.getStyle().layers;
+      // console.log(layers);
       // Find the index of the first symbol layer in the map style
-      let firstSymbolId;
-      layers.some((layer) => {
-        firstSymbolId = layer.id;
-        return layer.type === 'symbol';
+      // let firstSymbolId;
+      // layers.some((layer) => {
+      //   firstSymbolId = layer.id;
+      //   return layer.type === 'symbol';
+      // });
+      map.addSource('owm', {
+        type: 'raster',
+        tiles: [
+          `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${process.env.REACT_APP_OWM_KEY}`,
+        ],
       });
       map.addLayer(
         {
-          id: 'owm',
+          id: 'owm-layer',
           type: 'raster',
-          source: {
-            type: 'raster',
-            tiles: [
-              'https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=a41fb468ab8ad1c348ac85b9e99d4ffd',
-            ],
-          },
+          source: 'owm',
         },
-        firstSymbolId
+        'road-intersection'
       );
     });
     // clean up on unmount
