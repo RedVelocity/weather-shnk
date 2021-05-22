@@ -18,7 +18,7 @@ const WeatherMap = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [longitude, latitude],
       zoom: 10,
       interactive: false,
@@ -35,10 +35,8 @@ const WeatherMap = () => {
       // Find the index of the first symbol layer in the map style
       let firstSymbolId;
       layers.some((layer) => {
-        if (layer.type === 'symbol') {
-          firstSymbolId = layer.id;
-          return true;
-        } else return false;
+        firstSymbolId = layer.id;
+        return layer.type === 'symbol';
       });
       map.addLayer(
         {
