@@ -31,8 +31,8 @@ const WeatherMap = () => {
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     // add weather layer
     map.on('load', () => {
-      // const layers = map.getStyle().layers;
-      // console.log(layers);
+      const layers = map.getStyle().layers;
+      console.log(layers);
       map.addSource('owm', {
         type: 'raster',
         tiles: [
@@ -45,7 +45,7 @@ const WeatherMap = () => {
           type: 'raster',
           source: 'owm',
         },
-        'poi-label'
+        'settlement-major-label'
       );
     });
     // clean up on unmount
