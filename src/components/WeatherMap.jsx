@@ -18,7 +18,7 @@ const WeatherMap = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/redvelocity/ckoz7x43v38or17o1uh7ggm5q',
+      style: 'mapbox://styles/redvelocity/ckozcqbwp16v017qip75tam5d',
       center: [longitude, latitude],
       zoom: 10,
       interactive: false,
@@ -31,15 +31,8 @@ const WeatherMap = () => {
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     // add weather layer
     map.on('load', () => {
-      const layers = map.getStyle().layers;
+      // const layers = map.getStyle().layers;
       // console.log(layers);
-      // Find the index of the first symbol layer in the map style
-      let firstSymbolId;
-      layers.some((layer) => {
-        firstSymbolId = layer.id;
-        return layer.type === 'symbol';
-      });      
-      console.log(firstSymbolId);
       map.addSource('owm', {
         type: 'raster',
         tiles: [
@@ -52,7 +45,7 @@ const WeatherMap = () => {
           type: 'raster',
           source: 'owm',
         },
-        firstSymbolId
+        'poi-label'
       );
     });
     // clean up on unmount
