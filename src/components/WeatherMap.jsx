@@ -31,14 +31,14 @@ const WeatherMap = () => {
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     // add weather layer
     map.on('load', () => {
-      // const layers = map.getStyle().layers;
+      const layers = map.getStyle().layers;
       // console.log(layers);
       // Find the index of the first symbol layer in the map style
-      // let firstSymbolId;
-      // layers.some((layer) => {
-      //   firstSymbolId = layer.id;
-      //   return layer.type === 'symbol';
-      // });
+      let firstSymbolId;
+      layers.some((layer) => {
+        firstSymbolId = layer.id;
+        return layer.type === 'symbol';
+      });
       map.addSource('owm', {
         type: 'raster',
         tiles: [
@@ -51,7 +51,7 @@ const WeatherMap = () => {
           type: 'raster',
           source: 'owm',
         },
-        'turning-feature'
+        firstSymbolId
       );
     });
     // clean up on unmount
