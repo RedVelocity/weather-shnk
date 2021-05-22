@@ -51,7 +51,7 @@ const WeatherMap = () => {
           type: 'raster',
           source: 'owm',
         },
-        'road-intersection'
+        'turning-feature'
       );
     });
     // clean up on unmount
