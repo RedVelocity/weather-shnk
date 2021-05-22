@@ -44,8 +44,8 @@ const WeatherMap = () => {
           id: 'owm-layer',
           type: 'raster',
           source: 'owm',
-        },
-        'settlement-major-label'
+        }
+        // 'road-label'
       );
     });
     // clean up on unmount
