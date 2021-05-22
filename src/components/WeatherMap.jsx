@@ -38,7 +38,8 @@ const WeatherMap = () => {
       layers.some((layer) => {
         firstSymbolId = layer.id;
         return layer.type === 'symbol';
-      });
+      });      
+      console.log(firstSymbolId);
       map.addSource('owm', {
         type: 'raster',
         tiles: [
