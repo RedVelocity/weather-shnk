@@ -30,24 +30,24 @@ const WeatherMap = () => {
     // add navigation control (the +/- zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     // add weather layer
-    map.on('load', () => {
-      const layers = map.getStyle().layers;
-      console.log(layers);
-      map.addSource('owm', {
-        type: 'raster',
-        tiles: [
-          `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${process.env.REACT_APP_OWM_KEY}`,
-        ],
-      });
-      map.addLayer(
-        {
-          id: 'owm-layer',
-          type: 'raster',
-          source: 'owm',
-        }
-        // 'road-label'
-      );
-    });
+    // map.on('load', () => {
+    //   const layers = map.getStyle().layers;
+    //   console.log(layers);
+    //   map.addSource('owm', {
+    //     type: 'raster',
+    //     tiles: [
+    //       `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${process.env.REACT_APP_OWM_KEY}`,
+    //     ],
+    //   });
+    //   map.addLayer(
+    //     {
+    //       id: 'owm-layer',
+    //       type: 'raster',
+    //       source: 'owm',
+    //     }
+    //     // 'road-label'
+    //   );
+    // });
     // clean up on unmount
     return () => map.remove();
   }, [longitude, latitude]);
