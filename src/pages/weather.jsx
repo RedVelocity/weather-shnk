@@ -12,7 +12,7 @@ const WeatherPage = () => {
       <div className="md:col-start-2 md:row-span-2 md:col-span-2 md:row-start-1">
         <WeatherChart />
       </div>
-      <div className="md:col-span-3">
+      <div className="md:col-span-full">
         <WeatherMap />
       </div>
     </div>

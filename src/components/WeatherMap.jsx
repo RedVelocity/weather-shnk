@@ -9,47 +9,40 @@ import { LocationContext } from '../context/locationProvider';
 mapboxgl.workerClass = MapboxWorker;
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
 
+let marker; // current marker
 const WeatherMap = () => {
   const {
     location: { longitude, latitude },
   } = useContext(LocationContext);
   const mapContainerRef = useRef(null);
+  const map = useRef(null);
 
   useEffect(() => {
-    const map = new mapboxgl.Map({
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: 'mapbox://styles/redvelocity/ckozmz39930fd17o235d58kon',
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: [longitude, latitude],
       zoom: 10,
       interactive: false,
     });
-    // add marker
-    new mapboxgl.Marker({ color: '#EF4444' })
-      .setLngLat([longitude, latitude])
-      .addTo(map);
     // add navigation control (the +/- zoom buttons)
-    map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-    // add weather layer
-    // map.on('load', () => {
-    //   const layers = map.getStyle().layers;
-    //   console.log(layers);
-    //   map.addSource('owm', {
-    //     type: 'raster',
-    //     tiles: [
-    //       `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${process.env.REACT_APP_OWM_KEY}`,
-    //     ],
-    //   });
-    //   map.addLayer(
-    //     {
-    //       id: 'owm-layer',
-    //       type: 'raster',
-    //       source: 'owm',
-    //     }
-    //     // 'road-label'
-    //   );
-    // });
+    map.current.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
     // clean up on unmount
-    return () => map.remove();
+    return () => map.current.remove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!map.current) return;
+    // clear existing marker
+    marker?.remove();
+    // add marker
+    map.current.setCenter([longitude, latitude]);
+    map.current.setZoom(10);
+    marker = new mapboxgl.Marker({ color: '#EF4444' });
+    marker.setLngLat([longitude, latitude]).addTo(map.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [longitude, latitude]);
 
   return <div className="card h-96" ref={mapContainerRef}></div>;
